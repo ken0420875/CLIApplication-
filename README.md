@@ -1,11 +1,12 @@
 CLI Application
-This is my Accounting Ledger Application.
 Hi my name is Kendell Holmes a current Student at YearUpUnited in the Application Development track.
 
 kholmes@my.yearupunited.org
 
 
 https://github.com/ken0420875
+
+What does this app do?
 
 This application allows one to add deposits, view the deposits, make payments and view the payments that were made.
 And if you're looking for the payment history it is stored in the csv file.
@@ -26,12 +27,31 @@ This is the transcations.csv file where the payments and deposits are stored.
  These are Java import statements. 
  They tell your program which classes it needs to borrow from a package.
  It's somewhat like identifying a certain area that needs to be shown, by importing classes like Scanner or FileReader.
- And here's an exmaple of where they show up later in the code.
- <img width="929" height="269" alt="Screenshot 2025-10-17 at 10 13 48 AM" src="https://github.com/user-attachments/assets/3b6d1f7f-37ed-48b3-84db-cb0b35446b43" />
+ .
+
+
+
+I also made sure that my BufferedWriter and FileWriter were in the same bracket as the date,time,desciption and more so they connect and print out whatever the user types.
+<img width="988" height="673" alt="Screenshot 2025-10-17 at 2 18 06 PM" src="https://github.com/user-attachments/assets/7dd454c3-e6b0-4a5f-8040-8c574ed2e708" />
+
+
+
+
+These switch statements Identifies whatever the user may choose and takes them there. And because of these switch statments I am allowed to type upper or lower case without any error. 
+
+
+<img width="779" height="673" alt="Screenshot 2025-10-17 at 2 18 49 PM" src="https://github.com/user-attachments/assets/76af5e65-6dce-48a3-93a7-31279ad7af50" />
+
+
+
 
 Resources : Java Fundamentals
  Student Workbook 2a — Strings Loops and Arrays
   Version 7.0 Y
  https://www.w3schools.com/java/default.asp
- https://claude.ai/new
+ 
+https://claude.ai/new
+ 
  Shoutout My Peers!!!
+
+ 
