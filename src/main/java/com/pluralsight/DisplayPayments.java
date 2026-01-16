@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class DisplayPayments {
 
@@ -38,11 +37,8 @@ public class DisplayPayments {
             System.err.println("Error reading file: " + ex.getMessage());
         }
 
-        ConsoleHelper.promptForString("\nPress enter to continue...");
+        ConsoleHelper.promptForString("\nPress enter to continue");
 
-        // System.out.println("\nPress Enter to continue...");
-        // Scanner scanner = new Scanner(System.in);
-        // scanner.nextLine();
     }
 
 }
