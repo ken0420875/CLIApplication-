@@ -2,6 +2,7 @@ package com.plurasight;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class TransactionApp {
     private final LocalDate date;
@@ -37,4 +38,16 @@ public class TransactionApp {
     public double getAmount() {
         return amount;
     }
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+
+        return String.format("%-20s | %-20s | %-20s | %-20s | %-20.2f",
+                date, time.format(formatter), description, vendor, amount);
+    }
+    
 }
+
+
+
+
