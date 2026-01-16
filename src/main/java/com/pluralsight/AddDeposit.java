@@ -15,12 +15,12 @@ public class AddDeposit {
         System.out.println("Current time (00:00)");
         String time = scanner.nextLine();
 
-        ConsoleHelper.promptForString("Please Enter the description:");
-        ConsoleHelper.promptForString("Please enter Vendor name: ");
-        ConsoleHelper.promptForDouble("Please enter amount to be paid: ");
+        String description =ConsoleHelper.promptForString("Please Enter the description:");
+        String vendorName =ConsoleHelper.promptForString("Please enter Vendor name: ");
+        double amountPaid = ConsoleHelper.promptForDouble("Please enter amount to be paid: ");
         // used this multiple times
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv" , true))) {
-            writer.write(today.format(fmt)+ "|" + time + "|" + description + "|" + vendorName + "|" + amount + "\n");
+            writer.write(today.format(fmt)+ "|" + time + "|" + description + "|" + vendorName + "|" + amountPaid + "\n");
             System.out.println("Deposit has went through");
         } catch (IOException ex) {
             System.err.println("Error " + ex.getMessage());
