@@ -15,15 +15,10 @@ public class AddDeposit {
         System.out.println("Current time (00:00)");
         String time = scanner.nextLine();
 
-        System.out.println("Please Enter the description:");
-        String description = scanner.nextLine();
-        System.out.print("Please enter Vendor name: ");
-        String vendorName = scanner.nextLine();
-        System.out.print("Please enter amount to be paid: ");
-        double amount = scanner.nextDouble();
-        scanner.nextLine();
-        // double because of the number
-        // used this multiple timess
+        ConsoleHelper.promptForString("Please Enter the description:");
+        ConsoleHelper.promptForString("Please enter Vendor name: ");
+        ConsoleHelper.promptForDouble("Please enter amount to be paid: ");
+        // used this multiple times
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv" , true))) {
             writer.write(today.format(fmt)+ "|" + time + "|" + description + "|" + vendorName + "|" + amount + "\n");
             System.out.println("Deposit has went through");
