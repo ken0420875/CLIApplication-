@@ -5,11 +5,11 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class TransactionApp {
-    private final LocalDate date;
-    private final LocalTime time;
-    private final String description;
-    private final String vendor;
-    private final double amount;
+    private  LocalDate date;
+    private  LocalTime time;
+    private  String description;
+    private  String vendor;
+    private  double amount;
 
     public TransactionApp(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
@@ -38,6 +38,27 @@ public class TransactionApp {
     public double getAmount() {
         return amount;
     }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
