@@ -16,16 +16,9 @@ public class MakePayment {
         System.out.println("Current time (0:00)");
         String Systimestamp = scanner.nextLine();
 
-        System.out.println("Please Enter the description:");
-        String description = scanner.nextLine();
-
-        System.out.print("Please enter Vendor name: ");
-        String vendorName = scanner.nextLine();
-
-        System.out.print("Please enter amount to be paid: ");
-        double amount = scanner.nextDouble();
-        scanner.nextLine();
-        // double because of the number
+        String description = ConsoleHelper.promptForString("Please enter the description");
+        String vendorName = ConsoleHelper.promptForString("Please enter vendor name");
+        double amount = ConsoleHelper.promptForDouble("Please enter amount to be paid");
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv", true))) {
             writer.write(Sysdate + "|" + Systimestamp + "|" + description + "|" + vendorName + "|" + -amount + "\n");

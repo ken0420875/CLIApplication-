@@ -6,21 +6,26 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class DisplayReports {
-    public static void displayReports() {
-        System.out.println("\n ---- Reports Page ----");
 
+    public static void displayReports() {
 
         double totalDeposits = 0.0;
         double totalPayments = 0.0;
 
+        System.out.println("\n ---- Reports Page ----");
+
         try (BufferedReader reader = new BufferedReader(new FileReader("transactions.csv"))) {
+
             String line;
+
             while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty()) continue;
 
                 String[] parts = line.split("\\|");
+
+                if (line.trim().isEmpty()) continue;
                 if (parts.length < 5) continue;
 
+                // adds the value from the parsed transaction line
                 try {
                     double amount = Double.parseDouble(parts[4]);
                     if (amount > 0) {
@@ -29,9 +34,11 @@ public class DisplayReports {
                         totalPayments += amount;
                     }
                 } catch (NumberFormatException e) {
-
+                    System.out.println("Incorrect number formatting.");
                 }
+
             }
+
         } catch (IOException ex) {
             System.err.println("Error " + ex.getMessage());
             return;
