@@ -1,55 +1,44 @@
 package com.pluralsight;
-
-import java.util.Scanner;
-
-
-// 1.) FileReader + BufferedReader || 2.) Resolve Deposit error towards the end. ||
-// 3.) Less string reliant when it comes to time and date. || 4.) Add payment menu
-// 5.) Create an @Override file in TransactionApp.java, make it at the bottom and look at Matt's gitHub SearchInventory.
-//Ledger menu - Report
+import java.util.Arrays;
+import java.util.List;
 
 class Main {
-
-
     public static void main(String[] args) throws IllegalStateException {
-        // Scanner scanner;
-        // scanner = new Scanner(System.in);
         boolean running = true;
+        while (running) {
+            List<String> homeOptions = Arrays.asList(
+                    "Add Deposit 💰",
+                    "Make Payment 💳",
+                    "Ledger 📊",
+                    "Exit 🚪"
+            );
 
-            while (running) {
-                System.out.println(" ===========HOME SCREEN===========");
-                System.out.println("  D) Add Deposit 💰");
-                System.out.println("  P) Make Payment 💳");
-                System.out.println("  L) Ledger 📊");
-                System.out.println("  X) Exit 🚪");
-                System.out.println("================================");
+            String choice = ConsoleHelper.promptForHelperMenu("===========HOME SCREEN===========",
+                    homeOptions,
+                    false  // No cancel option needed for main menu
+            );
 
-                // String choice = scanner.nextLine().toUpperCase();
-                String choice = ConsoleHelper.promptForString("Please Choose from D, P, L,X:").toUpperCase();
+            if (choice == null) {
+                continue;
+            }
 
             switch (choice) {
-                case "D":
+                case "Add Deposit 💰":
                     AddDeposit.addDeposit();
-                       break;
-                case "P":
+                    break;
+                case "Make Payment 💳":
                     MakePayment.makePayment();
-                      break;
-                    case "L":
+                    break;
+                case "Ledger 📊":
                     ShowLedger.showLedger();
-                      break;
-                      case "X":
-                     running = false;
-                    System.out.println("Exiting the application! ");
-                       break;
-                    default:
-                    System.out.println("Invalid option. Select a valid option " + choice);
+                    break;
+                case "Exit 🚪":
+                    running = false;
+                    System.out.println("Exiting the application!");
+                    break;
+                default:
+                    System.out.println("Invalid option selected: " + choice);
             }
         }
     }
-
 }
-
-
-
-
-
