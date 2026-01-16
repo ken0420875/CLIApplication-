@@ -1,4 +1,4 @@
-package com.plurasight;
+package com.pluralsight;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayDeposits {
+
+    //test comment 
 
     public static void displayDeposits() {
         System.out.println("\n======= DEPOSITS ONLY =======");

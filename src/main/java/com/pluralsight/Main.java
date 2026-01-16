@@ -1,4 +1,4 @@
-package com.plurasight;
+package com.pluralsight;
 
 import java.util.Scanner;
 
@@ -15,20 +15,17 @@ class Main {
         Scanner scanner;
         scanner = new Scanner(System.in);
         boolean running = true;
-        System.out.println("Good Afternoon");
 
             while (running) {
-                System.out.println("      HOME SCREEN             ");
+                System.out.println(" ===========HOME SCREEN===========");
                 System.out.println("  D) Add Deposit 💰");
                 System.out.println("  P) Make Payment 💳");
                 System.out.println("  L) Ledger 📊");
                 System.out.println("  X) Exit 🚪");
                 System.out.println("================================");
-                System.out.print("Enter your choice: ");
+                System.out.print("Please Choose from D, P, L,X: ");
 
                 String choice = scanner.nextLine().toUpperCase();
-
-
             switch (choice) {
                 case "D":
                     AddDeposit.addDeposit(scanner);
@@ -36,24 +33,17 @@ class Main {
                 case "P":
                     MakePayment.makePayment(scanner);
                       break;
-
                     case "L":
                     ShowLedger.showLedger();
                       break;
-
                       case "X":
                      running = false;
-                    System.out.println("See ya next time! ");
+                    System.out.println("Exiting the application! ");
                        break;
-
                     default:
                     System.out.println("Invalid option. Select a valid option " + choice);
-
             }
-
-
         }
-
     }
 
 }

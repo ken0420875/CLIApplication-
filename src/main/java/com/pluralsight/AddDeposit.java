@@ -1,4 +1,4 @@
-package com.plurasight;
+package com.pluralsight;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -31,7 +31,7 @@ public class AddDeposit {
             System.err.println("Error " + ex.getMessage());
         }
 
-
+//        System.out.println();
 
     }
 
