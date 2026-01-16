@@ -64,25 +64,19 @@ class MainClass {
     ///  Add deposit
     private static void addDeposit(Scanner scanner) {
         LocalDate today = LocalDate.now();
-
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
-
         System.out.println("Current time (00:00)");
         String time = scanner.nextLine();
 
         System.out.println("Please Enter the description:");
         String description = scanner.nextLine();
-
         System.out.print("Please enter Vendor name: ");
         String vendorName = scanner.nextLine();
-
         System.out.print("Please enter amount to be paid: ");
           double amount = scanner.nextDouble();
             scanner.nextLine();
         // double because of the number
-        // used this multiple times
-
+        // used this multiple timess
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv" , true))) {
             writer.write(today.format(fmt)+ "|" + time + "|" + description + "|" + vendorName + "|" + amount + "\n");
             System.out.println("Deposit has went through");
@@ -278,7 +272,6 @@ class MainClass {
             } catch (IOException ex) {
                 System.err.println("Error reading file: " + ex.getMessage());
             }
-
             System.out.println("\nPress Enter to continue...");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
