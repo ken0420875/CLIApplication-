@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -11,9 +12,8 @@ public class AddDeposit {
 
     public static void addDeposit(Scanner scanner) {
         LocalDate today = LocalDate.now();
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        System.out.println("Current time (00:00)");
-        String time = scanner.nextLine();
+        LocalTime time = LocalTime.now();
+
 
         String description =ConsoleHelper.promptForString("Please Enter the description:");
         String vendorName =ConsoleHelper.promptForString("Please enter Vendor name: ");
