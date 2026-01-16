@@ -12,8 +12,8 @@ class Main {
 
 
     public static void main(String[] args) throws IllegalStateException {
-        Scanner scanner;
-        scanner = new Scanner(System.in);
+        // Scanner scanner;
+        // scanner = new Scanner(System.in);
         boolean running = true;
 
             while (running) {
@@ -23,15 +23,16 @@ class Main {
                 System.out.println("  L) Ledger 📊");
                 System.out.println("  X) Exit 🚪");
                 System.out.println("================================");
-                System.out.print("Please Choose from D, P, L,X: ");
 
-                String choice = scanner.nextLine().toUpperCase();
+                // String choice = scanner.nextLine().toUpperCase();
+                String choice = ConsoleHelper.promptForString("Please Choose from D, P, L,X:").toUpperCase();
+
             switch (choice) {
                 case "D":
-                    AddDeposit.addDeposit(scanner);
+                    AddDeposit.addDeposit();
                        break;
                 case "P":
-                    MakePayment.makePayment(scanner);
+                    MakePayment.makePayment();
                       break;
                     case "L":
                     ShowLedger.showLedger();
