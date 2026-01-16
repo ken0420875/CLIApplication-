@@ -7,15 +7,14 @@ public class ShowLedger {
     public static void showLedger() {
 
         String ledgerScreen = """
-                                    *************************************
-                                    *         Welcome to ledger screen   *
-                                    *************************************
-                                      Choose what you would like to display
+                ===========Ledger screen=============
+                 A) All
+                 D) Deposits
+                 P) Payments
+                 R) Reports
+                 H) Back to home screen               
                 
-                                    [A: All]             [D: Deposits ]
-                
-                                    [P: Payments]         [R:  Reports ]
-                                         [H: Back to home screen ]
+                 
                 """;
 
            while(true){
